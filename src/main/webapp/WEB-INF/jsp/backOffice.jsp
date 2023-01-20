@@ -12,8 +12,8 @@ float chiffreAffaire = (float) request.getAttribute("chiffreAffaire");
      <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
         <title>Back Office</title>
-        <link rel="stylesheet" jsp:href="@{/assets/bootstrap/css/bootstrap.min.css}">
-        <link rel="stylesheet" jsp:href="@{/assets/css/Contact-Form-Clean.css}">
+        <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+        <link rel="stylesheet" href="assets/css/Contact-Form-Clean.css">
 </head>
 <body>
  <h1>Back Office AdministrTateur</h1>
@@ -61,9 +61,9 @@ float chiffreAffaire = (float) request.getAttribute("chiffreAffaire");
      </header>
      <hr>
      <footer></footer>
-     <script jsp:src="@{/assets/js/jquery.min.js}"></script>
-     <script jsp:src="@{/assets/bootstrap/js/bootstrap.min.js}"></script>
-     <script jsp:src="@{/assets/js/clean-blog.js}"></script>
+     <script src="/assets/js/jquery.min.js"></script>
+     <script src=""></script>
+     <script src="/assets/js/clean-blog.js"></script>
 
 
 
