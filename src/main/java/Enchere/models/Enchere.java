@@ -2,7 +2,7 @@ package Enchere.models;
 
 import Enchere.ObjectBdd.Mere;
 
-import java.sql.Timestamp;
+import java.sql.Date;
 
 public class Enchere extends Mere {
 
@@ -11,7 +11,7 @@ public class Enchere extends Mere {
     private  String description;
     private float prixMinimumVente;
     private int durreEnchere;
-    private Timestamp dateheureenchere;
+    private Date dateheureenchere;
     private int status;
 
     public Enchere()
@@ -28,7 +28,7 @@ public class Enchere extends Mere {
         this.durreEnchere = durreEnchere;
     }
 
-    public Enchere(int idenchere,int idUtilisateur, String description, float prixMinimumVente, int durreEnchere, Timestamp dateheureenchere ,int status) {
+    public Enchere(int idenchere,int idUtilisateur, String description, float prixMinimumVente, int durreEnchere, Date dateheureenchere ,int status) {
         this(idUtilisateur, description, prixMinimumVente, durreEnchere);
         this.status=status;
         this.idenchere=idenchere;
@@ -69,11 +69,11 @@ public class Enchere extends Mere {
         this.durreEnchere = durreEnchere;
     }
 
-    public Timestamp getDateheureenchere() {
+    public Date getDateheureenchere() {
         return dateheureenchere;
     }
 
-    public void setDateheureenchere(Timestamp dateheureenchere) {
+    public void setDateheureenchere(Date dateheureenchere) {
         this.dateheureenchere = dateheureenchere;
     }
 

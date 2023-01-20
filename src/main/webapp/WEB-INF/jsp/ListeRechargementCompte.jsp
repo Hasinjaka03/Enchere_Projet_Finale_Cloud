@@ -1,5 +1,5 @@
 <%@page import="java.util.List"%>
-<%@page import="Enchere.models.Admin"%>
+<%@page import="com.example.datasyncv1.models.Admin"%>
 <%@page language="java" contentType="text/html" pageEncoding="UTF-8"%>
 <%
 String token = (String)request.getSession().getAttribute("token");

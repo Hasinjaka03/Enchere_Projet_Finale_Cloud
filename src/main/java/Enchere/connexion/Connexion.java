@@ -35,7 +35,7 @@ public class Connexion
     {
         try {
             Class.forName("org.postgresql.Driver");
-            this.con = DriverManager.getConnection("jdbc:postgresql://localhost:5432/enchere", "postgres", "hasinjaka");
+            this.con = DriverManager.getConnection("jdbc:postgresql://localhost:5432/enchere", "postgres", "hoby");
         } catch (Exception e) {
         } finally {
         }

@@ -11,10 +11,11 @@ package Enchere.ObjectBdd;
  */
 import java.lang.reflect.Field;
 import java.lang.reflect.Method;
-import java.sql.*;
 import java.sql.Date;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.Time;
 import java.util.*;
-
 
 public class ManipClass {
 
@@ -125,11 +126,6 @@ public class ManipClass {
                     statement.setTime(parametreIndex, (Time) values[i]);
                     parametreIndex++;
                 }
-                else if (attribTypes.get(attributes[i]).getSimpleName().equals("Timestamp")) {
-                    statement.setTimestamp(parametreIndex, (Timestamp) values[i]);
-                    parametreIndex++;
-                }
-
             }
         } catch (Exception e) {
             e.printStackTrace();
@@ -177,10 +173,6 @@ public class ManipClass {
                     statement.setTime(firstIndex, (Time) values[i]);
                     firstIndex++;
                 }
-                else if (values[i] instanceof Timestamp) {
-                    statement.setTimestamp(firstIndex, (Timestamp) values[i]);
-                    firstIndex++;
-                }
             }
         } catch (Exception e) {
             e.printStackTrace();
@@ -214,10 +206,6 @@ public class ManipClass {
                     firstIndex++;
                 } else if (values[i] instanceof Time) {
                     statement.setTime(firstIndex, (Time) values[i]);
-                    firstIndex++;
-                }
-                else if (values[i] instanceof Timestamp) {
-                    statement.setTimestamp(firstIndex, (Timestamp) values[i]);
                     firstIndex++;
                 }
             }
@@ -346,10 +334,6 @@ public class ManipClass {
                     statement.setString(firstIndex, (String) values[i]);
                     firstIndex++;
                 }
-                else if (values[i] instanceof Timestamp) {
-                    statement.setTimestamp(firstIndex, (Timestamp) values[i]);
-                    firstIndex++;
-                }
             }
         } catch (Exception e) {
             e.printStackTrace();
@@ -375,9 +359,6 @@ public class ManipClass {
             } else if (value instanceof Time) {
                 setter.invoke(instance, (Time) value);
             }
-            else if (value instanceof Timestamp) {
-                setter.invoke(instance, (Timestamp) value);
-            }
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -397,9 +378,7 @@ public class ManipClass {
             return toDate(res.getDate(attribName));
         } else if (className.equals("Calendar")) {
             return res.getDate(attribName, Calendar.getInstance());
-        } else if (className.equals("Timestamp")) {
-            return res.getTimestamp(attribName);
-        }else {
+        } else {
             return null;
         }
     }

@@ -23,7 +23,7 @@ public class Connexion1 {
         public Connexion1() throws SQLException, ClassNotFoundException {
             try {
                 Class.forName("org.postgresql.Driver");
-                this.con = DriverManager.getConnection("jdbc:postgresql://localhost:5432/rencontre","postgres","hasinjaka");
+                this.con = DriverManager.getConnection("jdbc:postgresql://localhost:5432/rencontre","postgres","hoby");
             } catch (ClassNotFoundException | SQLException ex){
                 throw ex;
             }

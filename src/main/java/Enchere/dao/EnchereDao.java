@@ -11,7 +11,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class EnchereDao {
-
+    Enchere ench;
     public List<Enchere> getListEnchere(Connection con) throws Exception {
         List<Enchere> liste = new ArrayList<>();
         Enchere e = new Enchere();
@@ -36,7 +36,7 @@ public class EnchereDao {
             Enchere e=new Enchere(res.getInt("idenchere"),res.getInt("idutilisateur"),
                     res.getString("description"),res.getFloat("prixminimumvente"),
                     res.getInt("durreenchere"),
-                    res.getTimestamp("dateheureenchere"),res.getInt("status"));
+                    res.getDate("dateheureenchere"),res.getInt("status"));
             liste.add(e);
         }
         return liste;
@@ -141,7 +141,7 @@ public class EnchereDao {
 
             // check if the user entered a category
             if (category != null) {
-                sb.append(" AND e.description  like '%"+category+"%'");
+                sb.append(" AND e.description = '"+category+"'");
             }
 
             // check if the user entered an auction status
@@ -153,7 +153,7 @@ public class EnchereDao {
 
             // check if the user entered a name or description
             if (keywords != null) {
-                sb.append(" AND (nomproduit LIKE '%"+keywords+"%' OR e.description LIKE '%"+keywords+"%')");
+                sb.append(" AND (nomproduit LIKE %"+keywords+"% OR e.description LIKE %"+keywords+"%)");
             }
             query=sb.toString();
             stmt = conn.prepareStatement(query);

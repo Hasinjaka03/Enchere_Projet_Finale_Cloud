@@ -22,7 +22,7 @@ public class AdministrateurController {
 
     Connexion con;
 
-    Connection con1 = ManipDb.pgConnect("postgres","enchere","hasinjaka");
+    Connection con1 = ManipDb.pgConnect("postgres","enchere","hoby");
 
     PrelevementEnchereDao p = new PrelevementEnchereDao();
     AdminDao a = new AdminDao();
