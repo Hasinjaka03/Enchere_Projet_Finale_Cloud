@@ -248,7 +248,10 @@ INSERT INTO Admin (email, mdp) VALUES ('admin@example.com', 'adminpassword');
 --enchérisseur--
 
 create or replace view HistoriqueEnchere as
-select u.idutilisateur , u.nom , u.prenom , e.description , e.prixminimumvente , e.durreenchere , e.dateheureenchere , ho.idenchere , ho.montant_offre , ho.dateheuremise  from Utilisateur u join HistoriqueOffre ho using(idUtilisateur) join ResultatEnchere re using(idEnchere) join  ;
+select u.idutilisateur , u.nom , u.prenom , e.description ,
+ e.prixminimumvente , e.durreenchere , e.dateheureenchere ,
+  ho.idenchere , ho.montant_offre , ho.dateheureoffre 
+  from Utilisateur u join HistoriqueOffre ho using(idUtilisateur) join ResultatEnchere re using(idEnchere) join Enchere e using(idenchere);
 
 ---vendeur--
 
