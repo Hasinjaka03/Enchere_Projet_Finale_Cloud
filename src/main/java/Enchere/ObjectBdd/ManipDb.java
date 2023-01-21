@@ -18,7 +18,7 @@ public class ManipDb {/* this class is for all database manipulations */
     public static Connection connect(String driverName, String user, String password, String dsn) throws Exception {
         Connection con = null;
         try {
-            Class.forName(driverName);
+                Class.forName(driverName);
             con = DriverManager.getConnection(dsn, user, password);
             if (con == null) {
                 Exception e = new Exception("An error occured during the attempt to connnect...");
